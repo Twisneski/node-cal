@@ -16,82 +16,99 @@ describe('cal', () => {
     it('should handle the current month', () => {
      const goal = execSync('cal').toString();
      const output = execSync('./cal.js').toString();{
-     expect(output).to.equal(goal);
-    });
+
+      expect(output).to.equal(goal);
+    };
   });
 
   describe("Zeller's congruence", () => {
     const zellers = require('../lib/zeller.js');
 
     describe('.modifiedMonth', () => {
-        it('return 13 for January', () => {
-         const goal = execSync('cal').toString();
-         const output = execSync('./cal.js 2016 1').toString();
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2016 1').toString();
+      it('return 13 for January', () => {
         expect(zellers.modifiedMonth(1)).to.equal(13);
       });
-        it('return 14 for February', () => {
-          const goal = execSync('cal').toString();
-          const output = execSync('./cal.js 2016 2').toString();
+    });
+    describe('.modifiedMonth', () => {
+     const goal = execSync('cal').toString();
+     const output = execSync('./cal.js 2016 2').toString();
+      it('return 14 for February', () => {
         expect(zellers.modifiedMonth(2)).to.equal(14);
       // 2 === 14
        });
-         it('return 3 for March', () => {
-           const goal = execSync('cal').toString();
-           const output = execSync('./cal.js 2016 3').toString();
+     });
+     describe('.modifiedMonth', () => {
+       const goal = execSync('cal').toString();
+       const output = execSync('./cal.js 2016 3').toString();
+      it('return 3 for March', () => {
         expect(zellers.modifiedMonth(3)).to.equal(3);
       // 3 === 3
-        });
      });
+     });
+
+
+
     describe('.modifiedYear', () => {
-        it('returns 2014 for Jan 2015', () => {
-           const goal = execSync('cal').toString();
-           const output = execSync('./cal.js 2015 1').toString();
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2015 1').toString();
+      it('returns 2014 for Jan 2015', () => {
         expect(zellers.modifiedYear(2015, 1)).to.equal(2014);
         });
-        it('returns 2015 for Feb 2015', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2016 2').toString();
+      });
+
+    describe('.modifiedYear', () => {
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2016 2').toString();
+      it('returns 2015 for Feb 2015', () => {
         expect(zellers.modifiedYear(2016, 2)).to.equal(2015);
        });
+      });
         // 2016, 2 === 2015
 
-         it('returns 2017 for March 2017', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2017 3').toString();
+     describe('.modifiedYear', () => {
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2017 3').toString();
+       it('returns 2017 for March 2017', () => {
         expect(zellers.modifiedYear(2017, 3)).to.equal(2017);
          });
       });
          // 2017, 3 === 2017
+
+
     describe('.getDay', () => {
-         it('returns 2 (Tuesday) for March 1, 2016', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2016 3').toString();
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2016 3').toString();
+      it('returns 2 (Tuesday) for March 1, 2016', () => {
         expect(zellers.getDay(2016, 3, 1)).to.equal(2);
       });
+     });
+    describe('.getDay', () => {
+      const goal = execSync('cal').toString();
+      const output = execSync('./cal.js 2000 3').toString();
       it('returns 3 (Wed) for March 1, 2000', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2000 3').toString();
         expect(zellers.getDay(2000, 3, 1)).to.equal(3);
        });
+      });
       // 2000, 3, 1 === 3
-       it('returns 1 (Mon) for March 2, 2200', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
+     describe('.getDay', () => {
+      it('returns 1 (Mon) for March 2, 2200', () => {
         expect(zellers.getDay(2100, 3, 1)).to.equal(1);
          });
+       });
       // 2100, 3, 1 === 1 day of the week
-       it('returns 0 (Sun) for March 2, 2200', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
+     describe('.getDay', () => {
+      it('returns 0 (Sun) for March 2, 2200', () => {
         expect(zellers.getDay(2200, 3, 2)).to.equal(0);
          });
+       });
       // 2200, 3, 2 === 0
-        it('returns 4 (Thur) for March 2, 2200', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
+     describe('.getDay', () => {
+      it('returns 4 (Thur) for March 2, 2200', () => {
         expect(zellers.getDay(2300, 3, 1)).to.equal(4);
          });
-       });
+     });
          // 2300, 3, 1 === 4
 
 //NEED TO WRITE CODE ON THESE TESTS
@@ -111,23 +128,15 @@ describe('cal', () => {
         describe('.getSixWeek', () => {
            const month = require('../lib/month.js');
           it('return 6 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getSixWeek(2016, 1)).to.equal(6);
           });
            it('return 6 week month', () => {
-             const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
             expect(month.getSixWeek(2016, 10)).to.equal(6);
           });
           it('return 6 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getSixWeek(2016, 10)).to.equal(4);
           });
           it('return 6 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getSixWeek(2016, 1)).to.equal(4);
           });
         });
@@ -136,23 +145,15 @@ describe('cal', () => {
         describe('.getFiveWeek', () => {
           const month = require('../lib/month.js');
           it('return 5 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFiveWeek(2016, 3)).to.equal(5);
           });
           it('return 5 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFiveWeek(2016, 4)).to.equal(5);
           });
           it('return 5 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFiveWeek(2016, 3)).to.equal(4);
           });
           it('return 5 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFiveWeek(2016, 4)).to.equal(4);
           });
           //this tests for 5 week month
@@ -160,96 +161,63 @@ describe('cal', () => {
         describe('.getFourWeek', () => {
           const month = require('../lib/month.js');
           it('return 4 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFourWeek(2015, 2)).to.equal(4);
           });
           it('return 4 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFourWeek(2009, 2)).to.equal(4);
           });
           it('return 4 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFourWeek(2015, 2)).to.equal(5);
           });
           it('return 4 week month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getFourWeek(2015, 2)).to.equal(5);
           });
+        });
           //this tests for 4 week month
 
         describe('.getThirtyDay', () => {
           const month = require('../lib/month.js');
           it('return 30 day month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getThirtyDay(2016, 4, 30)).to.equal(30);
           });
           it('return 30 day month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
             expect(month.getThirtyDay(2016, 6, 30)).to.equal(30);
           });
           it('return 30 day month', () => {
-            const goal = execSync('cal').toString();
-            const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyDay(2016, 4, 30)).to.equal(31);
           });
           it('return 30 day month', () => {
-            const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyDay(2016, 6, 30)).to.equal(31);
           });
+       });
           //this tests for 30 day month
 
         describe('.getThirtyOne', () => {
           const month = require('../lib/month.js');
           it('return 31 day month', () => {
-            const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyOne(2016, 7, 31)).to.equal(31);
           });
           it('return 31 day month', () => {
-            const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyOne(2016, 8, 31)).to.equal(31);
           });
           it('return 31 day month', () => {
-            const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyOne(2016, 7, 31)).to.equal(30);
           });
           it('return 31 day month', () => {
-            const goal = execSync('cal').toString();
-             const output = execSync('./cal.js 2200 3').toString();
-
             expect(month.getThirtyOne(2016, 8, 31)).to.equal(30);
           });
           //this tests for 31 day month
+        });
 
        var should = require('chai').should(),
 
 
-         it('should handle a full year 1886', () => {
-      const goal = execSync('cal 1886').toString().split("\n");
-      const output = execSync('node --harmony_destructuring ./cal.js 1886').toString().split("\n");
-      expect(output[0]).to.equal(goal[0]);
-    });
-    //test for full year
 
 
 
 
   });
-});//end of cal
+//});//end of cal
 
 //set up year.js
 //set up arrays for month month.js
