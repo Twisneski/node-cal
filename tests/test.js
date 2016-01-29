@@ -15,10 +15,9 @@ describe('cal', () => {
   describe('CLI', () => {
     it('should handle the current month', () => {
      const goal = execSync('cal').toString();
-     const output = execSync('./cal.js').toString();{
-
+     const output = execSync('./cal.js').toString();
       expect(output).to.equal(goal);
-    };
+    });
   });
 
   describe("Zeller's congruence", () => {
@@ -73,7 +72,7 @@ describe('cal', () => {
        it('returns 2017 for March 2017', () => {
         expect(zellers.modifiedYear(2017, 3)).to.equal(2017);
          });
-      });
+            });
          // 2017, 3 === 2017
 
 
@@ -108,7 +107,7 @@ describe('cal', () => {
       it('returns 4 (Thur) for March 2, 2200', () => {
         expect(zellers.getDay(2300, 3, 1)).to.equal(4);
          });
-     });
+       });
          // 2300, 3, 1 === 4
 
 //NEED TO WRITE CODE ON THESE TESTS
@@ -156,6 +155,7 @@ describe('cal', () => {
           it('return 5 week month', () => {
             expect(month.getFiveWeek(2016, 4)).to.equal(4);
           });
+        });
           //this tests for 5 week month
 
         describe('.getFourWeek', () => {
@@ -189,7 +189,7 @@ describe('cal', () => {
           it('return 30 day month', () => {
             expect(month.getThirtyDay(2016, 6, 30)).to.equal(31);
           });
-       });
+        });
           //this tests for 30 day month
 
         describe('.getThirtyOne', () => {
@@ -206,8 +206,8 @@ describe('cal', () => {
           it('return 31 day month', () => {
             expect(month.getThirtyOne(2016, 8, 31)).to.equal(30);
           });
-          //this tests for 31 day month
         });
+          //this tests for 31 day month
 
        var should = require('chai').should(),
 
@@ -215,9 +215,8 @@ describe('cal', () => {
 
 
 
-
-  });
-//});//end of cal
+  });//end of zeller congruence
+});//end of cal
 
 //set up year.js
 //set up arrays for month month.js
