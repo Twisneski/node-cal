@@ -238,6 +238,12 @@ describe('cal', () => {
        var should = require('chai').should(),
 
 
+         it('should handle a full year 1886', () => {
+      const goal = execSync('cal 1886').toString().split("\n");
+      const output = execSync('node --harmony_destructuring ./cal.js 1886').toString().split("\n");
+      expect(output[0]).to.equal(goal[0]);
+    });
+    //test for full year
 
 
 
